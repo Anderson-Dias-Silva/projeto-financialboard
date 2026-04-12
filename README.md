@@ -1,2 +1,2 @@
 # projeto-financialboard
-Projeto de um site de um dashboadr financeiro estático
+Projeto de um site de um dashboard financeiro estático
