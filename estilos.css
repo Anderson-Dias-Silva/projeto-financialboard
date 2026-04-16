@@ -275,14 +275,25 @@ body {
   color: white;
   font-weight: bold;
   font-size: 12px;
-  padding-bottom: 5px;
+  padding-bottom: 0;
   min-height: 20px; /* Para barras pequenas */
+}
+
+.barra::before {
+  content: attr(data-percent);
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: var(--color-text-primary);
+  font-weight: 700;
 }
 
 .barra::after {
   content: attr(data-month);
   position: absolute;
-  bottom: -25px;
+  bottom: -22px;
   left: 50%;
   transform: translateX(-50%);
   font-size: 12px;
@@ -332,3 +343,98 @@ body {
     grid-template-columns: repeat(3, 1fr);
   }
 }
+
+/* Tablet */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .container {
+    grid-template-columns: 200px 1fr;
+  }
+
+  .topbar-brand img {
+    width: 120px;
+  }
+
+  .grafico-container {
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 16px;
+  }
+
+  .legenda-grafico {
+    flex-direction: column;
+    height: 200px;
+    margin-bottom: 0;
+    margin-right: 16px;
+    justify-content: space-between;
+  }
+
+  .grafico-barras {
+    width: auto;
+    flex: 1;
+  }
+}
+
+/* Smartphone */
+@media (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .topbar {
+    order: -1;
+  }
+
+  .sidebar {
+    order: 1;
+    grid-row: unset;
+  }
+
+  .main {
+    order: 2;
+  }
+
+  .topbar-brand img {
+    width: 100px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .grafico-container {
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 12px;
+  }
+
+  .legenda-grafico {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    height: 220px;
+    margin-bottom: 0;
+    margin-right: 10px;
+    width: auto;
+    min-width: 45px;
+  }
+
+  .legenda-grafico span {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+  .grafico-barras {
+    width: calc(100% - 60px);
+    min-height: 240px;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .barra {
+    width: 30px;
+    min-height: 20px;
+  }
+}
+
