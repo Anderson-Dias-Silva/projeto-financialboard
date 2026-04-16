@@ -1,15 +1,48 @@
 ﻿@charset "UTF-8";
 
 /* =========================================
+   VARIÁVEIS DE CORES
+   ========================================= */
+
+:root {
+  --bg-body: #f1f5f9;
+  --bg-main: #f8fafc;
+  --bg-sidebar: #111827;
+  --bg-header: #111827;
+  --bg-card: #fff;
+  --bg-button: rgba(255, 255, 255, 0.08);
+  --bg-button-hover: rgba(255, 255, 255, 0.15);
+  --bg-user-block: rgba(255, 255, 255, 0.08);
+
+  --color-text-primary: #1f2937;
+  --color-text-sidebar: #e5e7eb;
+  --color-text-header: #f8fafc;
+  --color-text-link: #cbd5e1;
+  --color-text-link-hover: #f8fafc;
+  --color-positive: green;
+  --color-negative: red;
+
+  --border-card-default: #2ecc71;
+  --border-card-receita: #2e9acc;
+  --border-card-despesa: #e74c3c;
+  --color-barra: #3498db;
+
+  --shadow-sidebar: rgba(15, 23, 42, 0.15);
+  --shadow-header: rgba(255, 255, 255, 0.05);
+  --shadow-card: rgba(0, 0, 0, 0.1);
+}
+
+/* =========================================
    GLOBAL
    ========================================= */
 
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #f1f5f9;
-  color: #1f2937;
+  background-color: var(--bg-body);
+  color: var(--color-text-primary);
 }
+
 
 /* =========================================
    LAYOUT
@@ -25,7 +58,7 @@ body {
 .main {
   display: flex;
   flex-direction: column;
-  background: #f8fafc;
+  background: var(--bg-main);
 }
 
 .content {
@@ -46,9 +79,9 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 0 20px;
-  background: #111827;
-  color: #f8fafc;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+  background: var(--bg-header);
+  color: var(--color-text-header);
+  box-shadow: 0 1px 0 var(--shadow-header);
 }
 
 .topbar-brand {
@@ -62,8 +95,8 @@ body {
 }
 
 .topbar-brand img {
-  width: 50%;
-  height: auto;
+  width: 320px;
+  height: 75px;
 }
 
 .topbar-right {
@@ -77,15 +110,15 @@ body {
   height: 44px;
   border: none;
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.08);
-  color: #f8fafc;
+  background: var(--bg-button);
+  color: var(--color-text-header);
   cursor: pointer;
   display: grid;
   place-items: center;
 }
 
 .icon-button:hover {
-  background: rgba(255, 255, 255, 0.15);
+  background: var(--bg-button-hover);
 }
 
 .user-block {
@@ -94,7 +127,7 @@ body {
   gap: 10px;
   padding: 12px 16px;
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.08);
+  background: var(--bg-user-block);
 }
 
 .user-block i {
@@ -103,7 +136,7 @@ body {
 
 .user-block span {
   font-size: 0.95rem;
-  color: #f8fafc;
+  color: var(--color-text-header);
 }
 
 /* =========================================
@@ -112,12 +145,12 @@ body {
 
 .sidebar {
   grid-row: 2;
-  background: #111827;
-  color: #e5e7eb;
+  background: var(--bg-sidebar);
+  color: var(--color-text-sidebar);
   display: flex;
   flex-direction: column;
   padding: 24px 0;
-  box-shadow: 4px 0 20px rgba(15, 23, 42, 0.15);
+  box-shadow: 4px 0 20px var(--shadow-sidebar);
 }
 
 .sidebar ul {
@@ -135,7 +168,7 @@ body {
   align-items: center;
   gap: 12px;
   text-decoration: none;
-  color: #cbd5e1;
+  color: var(--color-text-link);
   padding: 14px 24px;
   border-radius: 16px;
   transition: background 0.2s ease, color 0.2s ease;
@@ -144,7 +177,7 @@ body {
 .sidebar a:hover,
 .sidebar li.active a {
   background: rgba(148, 163, 184, 0.16);
-  color: #f8fafc;
+  color: var(--color-text-link-hover);
 }
 
 .sidebar li.active a {
@@ -167,12 +200,12 @@ body {
 }
 
 .card {
-  background: #fff;
+  background: var(--bg-card);
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px var(--shadow-card);
   transition: 0.3s;
-  border-left: 5px solid #2ecc71;
+  border-left: 5px solid var(--border-card-default);
 }
 
 .card:hover {
@@ -184,11 +217,11 @@ body {
 }
 
 .card.receita {
-  border-left: 5px solid #2e9acc;
+  border-left: 5px solid var(--border-card-receita);
 }
 
 .card.despesa {
-  border-left: 5px solid #e74c3c;
+  border-left: 5px solid var(--border-card-despesa);
 }
 
 /* =========================================
@@ -196,7 +229,7 @@ body {
    ========================================= */
 
 .grafico {
-  background: #fff;
+  background: var(--bg-card);
   padding: 20px;
   border-radius: 8px;
 }
@@ -205,17 +238,55 @@ body {
   margin-bottom: 15px;
 }
 
+.grafico-container {
+  display: flex;
+  align-items: flex-end;
+}
+
+.legenda-grafico {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 200px;
+  margin-right: 10px;
+  font-size: 12px;
+  color: var(--color-text-primary);
+}
+
 .grafico-barras {
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
   height: 200px;
+  position: relative;
+  background-image: linear-gradient(to top, #ddd 1px, transparent 1px);
+  background-size: 100% 20px;
+  flex: 1;
 }
 
 .barra {
-  background-color: #3498db;
+  background-color: var(--color-barra);
   width: 40px;
   border-radius: 4px 4px 0 0;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 12px;
+  padding-bottom: 5px;
+  min-height: 20px; /* Para barras pequenas */
+}
+
+.barra::after {
+  content: attr(data-month);
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 12px;
+  color: var(--color-text-primary);
 }
 
 /* =========================================
@@ -223,7 +294,7 @@ body {
    ========================================= */
 
 .tabela {
-  background: #fff;
+  background: var(--bg-card);
   padding: 20px;
   border-radius: 8px;
 }
@@ -245,11 +316,11 @@ body {
    ========================================= */
 
 .positivo {
-  color: green;
+  color: var(--color-positive);
 }
 
 .negativo {
-  color: red;
+  color: var(--color-negative);
 }
 
 /* =========================================

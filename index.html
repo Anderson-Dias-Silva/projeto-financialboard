@@ -8,10 +8,13 @@
     <link rel="shortcut icon" href="imagens/logo.ico" type="image/x-icon">
     <link rel="stylesheet" href="estilos.css">
 </head>
+
 <body>
   <div class="container">
 
-    <!-- HEADER -->
+    <!-- =========================================
+       HEADER
+       ========================================= -->
     <header class="topbar">
       <div class="topbar-brand">
         <img src="imagens/logo-completa.png" alt="FinanceBoard">
@@ -27,7 +30,9 @@
       </div>
     </header>
 
-    <!-- SIDEBAR -->
+    <!-- =========================================
+       SIDEBAR
+       ========================================= -->
     <aside class="sidebar">
       <ul>
         <li class="active"><a href="#"><i class="fa-solid fa-chart-line"></i><span>Dashboard</span></a></li>
@@ -37,10 +42,15 @@
       </ul>
     </aside>
 
+    <!-- =========================================
+       MAIN CONTENT
+       ========================================= -->
     <div class="main">
       <section class="content">
 
-        <!-- CARDS -->
+        <!-- =========================================
+           CARDS
+           ========================================= -->
         <section class="cards">
           <div class="card">
             <p>Saldo Atual</p>
@@ -58,21 +68,35 @@
           </div>
         </section>
 
-        <!-- GRÁFICO -->
+        <!-- =========================================
+           GRÁFICO
+           ========================================= -->
         <section class="grafico">
           <h3>Desempenho Mensal</h3>
-          <div class="grafico-barras">
-            <div class="barra" style="height: 40%"><span>Jan</span></div>
-            <div class="barra" style="height: 70%"><span>Fev</span></div>
-            <div class="barra" style="height: 90%"><span>Mar</span></div>
-            <div class="barra" style="height: 50%"><span>Abr</span></div>
-            <div class="barra" style="height: 40%"><span>Mai</span></div>
-            <div class="barra" style="height: 70%"><span>Jun</span></div>
-            <div class="barra" style="height: 90%"><span>Jul</span></div>
+          <div class="grafico-container">
+            <div class="legenda-grafico">
+              <span>100%</span>
+              <span>80%</span>
+              <span>60%</span>
+              <span>40%</span>
+              <span>20%</span>
+              <span>0%</span>
+            </div>
+            <div class="grafico-barras">
+              <div class="barra" style="height: 40%" data-month="Jan">40%</div>
+              <div class="barra" style="height: 70%" data-month="Fev">70%</div>
+              <div class="barra" style="height: 90%" data-month="Mar">90%</div>
+              <div class="barra" style="height: 50%" data-month="Abr">50%</div>
+              <div class="barra" style="height: 40%" data-month="Mai">40%</div>
+              <div class="barra" style="height: 70%" data-month="Jun">70%</div>
+              <div class="barra" style="height: 90%" data-month="Jul">90%</div>
+            </div>
           </div>
         </section>
 
-        <!-- TABELA -->
+        <!-- =========================================
+           TABELA
+           ========================================= -->
         <section class="tabela">
           <h3>Últimas Transações</h3>
           <table>
