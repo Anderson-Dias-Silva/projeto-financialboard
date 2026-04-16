@@ -1,4 +1,8 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
+
+/* =========================================
+   GLOBAL
+   ========================================= */
 
 body {
   margin: 0;
@@ -7,76 +11,15 @@ body {
   color: #1f2937;
 }
 
+/* =========================================
+   LAYOUT
+   ========================================= */
+
 .container {
   display: grid;
   grid-template-columns: 260px 1fr;
-  height: 100vh;
-}
-
-.sidebar {
-  background: #111827;
-  color: #e5e7eb;
-  display: flex;
-  flex-direction: column;
-  padding: 24px 0;
-  box-shadow: 4px 0 20px rgba(15, 23, 42, 0.15);
-}
-
-.sidebar-brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 0 24px 30px;
-  margin-bottom: 10px;
-  border-bottom: 1px solid rgba(229, 231, 235, 0.08);
-  justify-content: space-between;
-}
-
-.sidebar-brand img {
-  width: 100%;
-  height: auto;
-}
-
-.sidebar-brand span {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #f8fafc;
-}
-
-.sidebar ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.sidebar li {
-  margin-bottom: 10px;
-}
-
-.sidebar a {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-  color: #cbd5e1;
-  padding: 14px 24px;
-  border-radius: 16px;
-  transition: background 0.2s ease, color 0.2s ease;
-}
-
-.sidebar a:hover,
-.sidebar li.active a {
-  background: rgba(148, 163, 184, 0.16);
-  color: #f8fafc;
-}
-
-.sidebar li.active a {
-  box-shadow: inset 4px 0 0 #2563eb;
-}
-
-.sidebar i {
-  width: 24px;
-  text-align: center;
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
 }
 
 .main {
@@ -85,25 +28,42 @@ body {
   background: #f8fafc;
 }
 
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  padding: 24px;
+}
+
+/* =========================================
+   HEADER
+   ========================================= */
+
 .topbar {
+  grid-column: 1 / -1;
   min-height: 72px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 24px;
+  padding: 0 20px;
   background: #111827;
   color: #f8fafc;
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
-.topbar-left {
+.topbar-brand {
   display: flex;
   align-items: center;
+  gap: 12px;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(229, 231, 235, 0.08);
+  justify-content: space-between;
 }
 
-.topbar-title {
-  font-size: 1.05rem;
-  font-weight: 700;
+.topbar-brand img {
+  width: 50%;
+  height: auto;
 }
 
 .topbar-right {
@@ -146,11 +106,54 @@ body {
   color: #f8fafc;
 }
 
-.content {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-  padding: 24px;
+/* =========================================
+   SIDEBAR
+   ========================================= */
+
+.sidebar {
+  grid-row: 2;
+  background: #111827;
+  color: #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  padding: 24px 0;
+  box-shadow: 4px 0 20px rgba(15, 23, 42, 0.15);
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+}
+
+.sidebar a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #cbd5e1;
+  padding: 14px 24px;
+  border-radius: 16px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.sidebar a:hover,
+.sidebar li.active a {
+  background: rgba(148, 163, 184, 0.16);
+  color: #f8fafc;
+}
+
+.sidebar li.active a {
+  box-shadow: inset 4px 0 0 #2563eb;
+}
+
+.sidebar i {
+  width: 24px;
+  text-align: center;
 }
 
 /* =========================================
@@ -167,7 +170,7 @@ body {
   background: #fff;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   transition: 0.3s;
   border-left: 5px solid #2ecc71;
 }
@@ -189,7 +192,7 @@ body {
 }
 
 /* =========================================
-   GRÁFICOS
+   GRÁFICO
    ========================================= */
 
 .grafico {
@@ -218,6 +221,7 @@ body {
 /* =========================================
    TABELA
    ========================================= */
+
 .tabela {
   background: #fff;
   padding: 20px;
@@ -229,11 +233,16 @@ body {
   border-collapse: collapse;
 }
 
-.tabela th, .tabela td {
+.tabela th,
+.tabela td {
   padding: 10px;
   text-align: left;
   border-bottom: 1px solid #ddd;
 }
+
+/* =========================================
+   UTILITÁRIOS
+   ========================================= */
 
 .positivo {
   color: green;
@@ -244,7 +253,7 @@ body {
 }
 
 /* =========================================
-   MEDIAS QUERIES
+   MEDIA QUERIES
    ========================================= */
 
 @media (min-width: 768px) {
