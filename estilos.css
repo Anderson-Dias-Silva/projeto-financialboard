@@ -174,14 +174,14 @@ body {
   transition: background 0.2s ease, color 0.2s ease;
 }
 
-.sidebar a:hover,
-.sidebar li.active a {
+.sidebar a:hover {
   background: rgba(148, 163, 184, 0.16);
   color: var(--color-text-link-hover);
+  box-shadow: inset 4px 0 0 #2ecc71;
 }
 
 .sidebar li.active a {
-  box-shadow: inset 4px 0 0 #2563eb;
+  background: transparent;
 }
 
 .sidebar i {
@@ -197,6 +197,11 @@ body {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 15px;
+}
+
+.cards h3 {
+  margin: 0 0 15px 0;
+  color: var(--color-text-primary);
 }
 
 .card {
@@ -342,6 +347,10 @@ body {
   .cards {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .cards h3 {
+    grid-column: 1 / -1;
+  }
 }
 
 /* Tablet */
@@ -388,6 +397,20 @@ body {
   .sidebar {
     order: 1;
     grid-row: unset;
+    align-items: center;
+  }
+
+  .sidebar ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  .sidebar a {
+    justify-content: center;
+    width: 80%;
+    text-align: center;
   }
 
   .main {
