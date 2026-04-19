@@ -215,8 +215,6 @@ body {
 
 .card:hover {
   transform: translateY(-5px);
-  color: var(--bg-card);
-  background-color: var(--border-card-default);
 }
 
 .card h2 {
@@ -227,17 +225,10 @@ body {
   border-left: 6px solid var(--border-card-receita);
 }
 
-.card.receita:hover {
-  background-color: var(--border-card-receita);
-}
-
 .card.despesa {
   border-left: 6px solid var(--border-card-despesa);
 }
 
-.card.despesa:hover {
-  background-color: var(--border-card-despesa);
-}
 
 /* =========================================
    GRÁFICO
@@ -360,81 +351,21 @@ body {
 
 .footer {
   grid-column: 1 / -1;
-  background: var(--bg-sidebar);
-  color: var(--color-text-header);
-  padding: 40px 20px 20px 20px;
-  box-sizing: border-box;
-  width: 100%;
-  overflow-x: hidden;
-}
-
-.footer-content {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
-  max-width: 1200px;
-  margin: 0 auto 0;
-  box-sizing: border-box;
-}
-
-.footer-section h4 {
-  margin: 0 0 15px 0;
-  font-size: 1rem;
-  color: var(--border-card-default);
-  border-bottom: 2px solid rgba(46, 204, 113, 0.3);
-  padding-bottom: 10px;
-  box-sizing: border-box;
-}
-
-.footer-section ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.footer-section li {
-  margin-bottom: 10px;
-}
-
-.footer-section a {
-  color: var(--color-text-link);
-  text-decoration: none;
-  font-size: 0.9rem;
-  transition: color 0.2s ease;
-}
-
-.footer-section a:hover {
-  color: var(--border-card-default);
-}
-
-.social-links {
-  display: flex;
-  gap: 15px;
-}
-
-.social-links a {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(46, 204, 113, 0.1);
-  border-radius: 50%;
-  font-size: 1.1rem;
-}
-
-.social-links a:hover {
-  background: rgba(46, 204, 113, 0.2);
-  transform: translateY(-3px);
+  background-color: var(--bg-sidebar);
+  color: var(--color-text-sidebar);
+  padding: 24px 20px;
+  text-align: center;
+  box-shadow: 0 -1px 0 var(--shadow-header);
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(229, 231, 235, 0.1);
-  padding-top: 20px;
-  text-align: center;
-  font-size: 0.85rem;
-  color: var(--color-text-link);
-  box-sizing: border-box;
+  margin: 0;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
 }
 
 /* =========================================
@@ -480,9 +411,7 @@ body {
     flex: 1;
   }
 
-  .footer-content {
-    grid-template-columns: repeat(2, 1fr);
-  }
+
 }
 
 /* Smartphone */
@@ -519,6 +448,10 @@ body {
   .main {
     order: 2;
     flex-grow: 1;
+  }
+
+  .footer {
+    order: 3;
   }
 
   .topbar-brand img {
@@ -563,38 +496,6 @@ body {
   .barra {
     width: 30px;
     min-height: 20px;
-  }
-
-  .footer-content {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    max-width: 100%;
-    margin: 0 0 20px 0;
-  }
-
-  .footer {
-    padding: 20px 10px 15px 10px;
-    order: 3;
-    width: 100%;
-  }
-
-  .footer-section h4 {
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-  }
-
-  .footer-section a {
-    font-size: 0.85rem;
-  }
-
-  .social-links {
-    gap: 10px;
-  }
-
-  .social-links a {
-    width: 36px;
-    height: 36px;
-    font-size: 0.9rem;
   }
 }
 
