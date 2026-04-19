@@ -21,8 +21,8 @@
       </div>
 
       <div class="topbar-right">
-        <button class="icon-button"><i class="fa-solid fa-magnifying-glass"></i></button>
-        <button class="icon-button"><i class="fa-regular fa-bell"></i></button>
+        <button class="icon-button" aria-label="Buscar"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button class="icon-button" aria-label="Notificações"><i class="fa-regular fa-bell"></i></button>
         <div class="user-block">
           <i class="fa-regular fa-circle-user"></i>
           <span>Usuário</span>
@@ -45,7 +45,7 @@
     <!-- =========================================
        MAIN CONTENT
        ========================================= -->
-    <div class="main">
+    <main class="main">
       <section class="content">
 
         <!-- =========================================
@@ -84,13 +84,13 @@
               <span>0%</span>
             </div>
             <div class="grafico-barras">
-              <div class="barra" style="height: 40%" data-month="Jan" data-percent="40%"></div>
-              <div class="barra" style="height: 70%" data-month="Fev" data-percent="70%"></div>
-              <div class="barra" style="height: 90%" data-month="Mar" data-percent="90%"></div>
-              <div class="barra" style="height: 50%" data-month="Abr" data-percent="50%"></div>
-              <div class="barra" style="height: 40%" data-month="Mai" data-percent="40%"></div>
-              <div class="barra" style="height: 70%" data-month="Jun" data-percent="70%"></div>
-              <div class="barra" style="height: 90%" data-month="Jul" data-percent="90%"></div>
+              <div class="barra barra-40" data-month="Jan" data-percent="40%"></div>
+              <div class="barra barra-70" data-month="Fev" data-percent="70%"></div>
+              <div class="barra barra-90" data-month="Mar" data-percent="90%"></div>
+              <div class="barra barra-50" data-month="Abr" data-percent="50%"></div>
+              <div class="barra barra-40" data-month="Mai" data-percent="40%"></div>
+              <div class="barra barra-70" data-month="Jun" data-percent="70%"></div>
+              <div class="barra barra-90" data-month="Jul" data-percent="90%"></div>
             </div>
           </div>
         </section>
@@ -101,6 +101,7 @@
         <section class="tabela">
           <h3>Últimas Transações</h3>
           <table>
+            <caption>Transações recentes do mês com datas, descrições e valores</caption>
             <thead>
               <tr>
                 <th>Data</th>
@@ -169,7 +170,7 @@
           </table>
         </section>
       </section>
-    </div>
+    </main>
 
     <!-- =========================================
        FOOTER

@@ -13,19 +13,25 @@
   --bg-button: rgba(255, 255, 255, 0.08);
   --bg-button-hover: rgba(255, 255, 255, 0.15);
   --bg-user-block: rgba(255, 255, 255, 0.08);
+  --bg-table-header: #f3f4f6;
+  --bg-table-striped: #f9fafb;
+  --bg-table-hover: #f0f4ff;
 
   --color-text-primary: #1f2937;
   --color-text-sidebar: #e5e7eb;
   --color-text-header: #f8fafc;
   --color-text-link: #cbd5e1;
   --color-text-link-hover: #f8fafc;
-  --color-positive: green;
-  --color-negative: red;
+  --color-positive: #22c55e;
+  --color-negative: #ef4444;
 
   --border-card-default: #29b362;
   --border-card-receita: #2e9acc;
   --border-card-despesa: #e74c3c;
+  --border-color: #d1d5db;
+  --border-light: #e5e7eb;
   --color-barra: #3498db;
+  --color-grid-line: #ddd;
 
   --shadow-sidebar: rgba(15, 23, 42, 0.15);
   --shadow-header: rgba(255, 255, 255, 0.05);
@@ -119,10 +125,13 @@ body {
   cursor: pointer;
   display: grid;
   place-items: center;
+  transition: background 0.2s ease;
 }
 
-.icon-button:hover {
+.icon-button:hover,
+.icon-button:focus {
   background: var(--bg-button-hover);
+  outline: none;
 }
 
 .user-block {
@@ -178,8 +187,16 @@ body {
   transition: background 0.2s ease, color 0.2s ease;
 }
 
-.sidebar a:hover {
+.sidebar a:hover,
+.sidebar a:focus {
   background: rgba(148, 163, 184, 0.16);
+  color: var(--color-text-link-hover);
+  box-shadow: inset 2px 0 0 #2ecc71;
+  outline: none;
+}
+
+.sidebar li.active a {
+  background: rgba(46, 204, 113, 0.15);
   color: var(--color-text-link-hover);
   box-shadow: inset 2px 0 0 #2ecc71;
 }
@@ -214,8 +231,12 @@ body {
   text-align: center;
 }
 
-.card:hover {
+.card:hover,
+.card:focus {
   transform: translateY(-5px);
+  color: var(--bg-card);
+  background-color: var(--border-card-default);
+  outline: none;
 }
 
 .card h2 {
@@ -226,8 +247,18 @@ body {
   border-left: 6px solid var(--border-card-receita);
 }
 
+.card.receita:hover,
+.card.receita:focus {
+  background-color: var(--border-card-receita);
+}
+
 .card.despesa {
   border-left: 6px solid var(--border-card-despesa);
+}
+
+.card.despesa:hover,
+.card.despesa:focus {
+  background-color: var(--border-card-despesa);
 }
 
 
@@ -267,7 +298,7 @@ body {
   align-items: flex-end;
   height: 200px;
   position: relative;
-  background-image: linear-gradient(to top, #ddd 1px, transparent 1px);
+  background-image: linear-gradient(to top, var(--color-grid-line) 1px, transparent 1px);
   background-size: 100% 20px;
   flex: 1;
 }
@@ -284,7 +315,23 @@ body {
   font-weight: bold;
   font-size: 12px;
   padding-bottom: 0;
-  min-height: 20px; /* Para barras pequenas */
+  min-height: 20px;
+}
+
+.barra-40 {
+  height: 40%;
+}
+
+.barra-50 {
+  height: 50%;
+}
+
+.barra-70 {
+  height: 70%;
+}
+
+.barra-90 {
+  height: 90%;
 }
 
 .barra::before {
@@ -318,6 +365,16 @@ body {
   border-radius: 8px;
 }
 
+.tabela caption {
+  caption-side: top;
+  font-size: 0.9rem;
+  color: var(--color-text-primary);
+  margin-bottom: 12px;
+  text-align: center;
+  font-style: italic;
+  opacity: 0.75;
+}
+
 .tabela table {
   width: 100%;
   border-collapse: collapse;
@@ -329,7 +386,7 @@ body {
 }
 
 .tabela thead {
-  background-color: #f3f4f6;
+  background-color: var(--bg-table-header);
 }
 
 .tabela th {
@@ -337,22 +394,24 @@ body {
   text-align: left;
   font-weight: 600;
   color: var(--color-text-primary);
-  border-bottom: 2px solid #d1d5db;
+  border-bottom: 2px solid var(--border-color);
 }
 
 .tabela td {
   padding: 12px 10px;
   text-align: left;
-  border-bottom: 1px solid #e5e7eb;
+  border-bottom: 1px solid var(--border-light);
 }
 
 .tabela tbody tr:nth-child(even) {
-  background-color: #f9fafb;
+  background-color: var(--bg-table-striped);
 }
 
-.tabela tbody tr:hover {
-  background-color: #f0f4ff;
+.tabela tbody tr:hover,
+.tabela tbody tr:focus {
+  background-color: var(--bg-table-hover);
   transition: background-color 0.2s ease;
+  outline: none;
 }
 
 .tabela td:last-child {
@@ -361,18 +420,18 @@ body {
 }
 
 .tabela tfoot {
-  background-color: #f3f4f6;
+  background-color: var(--bg-table-header);
 }
 
 .tabela tfoot tr {
-  border-top: 2px solid #d1d5db;
+  border-top: 2px solid var(--border-color);
 }
 
 .tabela tfoot td {
   padding: 12px 10px;
   font-weight: 600;
   color: var(--color-text-primary);
-  border-bottom: 2px solid #d1d5db;
+  border-bottom: 2px solid var(--border-color);
 }
 
 .tabela tfoot td:last-child {
